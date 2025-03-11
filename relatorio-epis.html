@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de EPIs</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/relatorios.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="./assets/img/logo.png" alt="Logo ProtecApp" class="logo">
+            <h1>Relatório de Entrega de EPIs</h1>
+        </header>
+
+        <table id="tabela-relatorio" border="1" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Funcionário</th>
+                    <th>Tipo de EPI</th>
+                    <th>Entrega</th>
+                    <th>Vencimento</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="button-group">
+            <button type="button" onclick="editar()">Editar</button>
+            <!-- <button type="button" onclick="baixarPDF()">Baixar PDF</button> -->
+            <button type="button" onclick="openModal()">Baixar PDF</button>
+            <button type="button" onclick="salvarEdicao()" style="display: none;" id="salvar-edicao">Salvar</button>
+        </div>
+
+        <footer>
+            <a href="index.html">Voltar à Tela Inicial</a>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal-overlay">
+        <div class="modal">
+            <h2>Período
+            <form name="filterForm">
+                <div class="labels">
+                    <label>
+                        <input type="radio" name="frequencia" value="diario">
+                        Diário
+                    </label>
+                    <label>
+                        <input type="radio" name="frequencia" value="semanal">
+                        Semanal
+                    </label>
+                    <label>
+                        <input type="radio" name="frequencia" value="mensal">
+                        Mensal
+                    </label>
+                    <label>
+                        <input type="radio" name="frequencia" value="anual">
+                        Anual
+                    </label>
+                    <label>
+                        <input type="radio" name="frequencia" value="geral">
+                        Geral
+                    </label>
+                </div>
+                <div class="botoes">
+                    <button type="submit" onClick="baixarPDF()">Download</button>
+                    <button type="button" class="close-btn" onclick="closeModal()">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="./assets/js/relatorio-epis.js"></script>
+
+<script>
+    const modal = document.getElementById('modal');
+
+    function openModal() {
+        modal.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+    }
+</script>
+
+</body>
+</html>

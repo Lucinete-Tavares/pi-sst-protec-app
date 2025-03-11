@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Recebimento de EPIs</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/cadastros.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="./assets/img/logo.png" alt="Logo" class="logo">
+            <h1>Cadastro de Realização de Treinamentos</h1>
+        </header>
+
+        <form class="form-cadastro">
+            <label for="nome-funcionario">Nome do Funcionário:</label>
+            <input type="text" id="nome-funcionario" name="nome-funcionario">
+
+            <label for="tipo-treinamento">Treinamento:</label>
+            <input type="text" id="tipo-treinamento" name="tipo-treinamento">
+
+            <label for="data-realizacao">Data de Realização:</label>
+            <input type="date" id="data-realizacao" name="data-realizacao">
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <footer>
+            <a href="index.html">Voltar à Tela Inicial</a>
+        </footer>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Salvo com sucesso!</p>
+            </div>
+        </div>
+    </div>
+   
+    <script src="./assets/js/cadastro-treinamentos.js"></script>    
+</body>
+</html>
